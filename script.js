@@ -178,9 +178,9 @@ canvas.addEventListener("touchstart", e => {
   VerifierPositionTexte(touch.clientX - rect.left, touch.clientY - rect.top);
 });
 canvas.addEventListener("touchmove", e => {
-  if (IndexDuTexteSelectionne === null) return;                                        //appliquer le glissement que si un texte est sélectionné. 
+  if (IndexDuTexteSelectionne === null) return;                                        //appliquer le glissement que si un texte est sélectionné 
   e.preventDefault();                                                                  
-  const rect = canvas.getBoundingClientRect();                                         //calculer les coordonnées tactiles relatives au canvas, puis appel de la fonction de déplacement.    
+  const rect = canvas.getBoundingClientRect();                                         //calculer les coordonnées tactiles relatives au canvas, puis appel de la fonction de déplacement   
   const touch = e.touches[0];
   appliquerDeplacement(touch.clientX - rect.left, touch.clientY - rect.top);
 });
@@ -189,34 +189,34 @@ canvas.addEventListener("touchcancel", () => IndexDuTexteSelectionne = null);
 
 // === Exporter le mème ===
 function TelechargerMeme() {
-  if (!img.src || (texts.length === 0 && (!TexteEnCoursEdition || !TexteEnCoursEdition.text))) {        //s'il y'a  pas une image et elle ne contion pas du etxte 
-    alert("Ajoutez une image et du texte !");                                                           //afficher l'alert 
+  if (!img.src || (texts.length === 0 && (!TexteEnCoursEdition || !TexteEnCoursEdition.text))) {            //s'il y'a  pas une image et elle ne contion pas du etxte 
+    alert("Ajoutez une image et du texte !");                                                               //afficher l'alert 
     return;
   }
-  const link = document.createElement("a");                                                             //Crée dynamiquement un élément <a> pour lancer le téléchargement.
-  link.download = "meme.png";                                                                               //Définit le nom du fichier téléchargé.
-  link.href = canvas.toDataURL();                                                                          //Convertit le contenu du canvas en image au format Base64.
-  link.click();                                                                                           //Simule un clic sur le lien pour déclencher le téléchargement.
-  ajouterAGalerie(canvas.toDataURL());                                                                       //Ajoute l’image générée à la galerie locale ou en mémoire.
+  const link = document.createElement("a");                                                                 //crée dynamiquement un élément <a> pour lancer le téléchargement
+  link.download = "meme.png";                                                                               //définit le nom du fichier téléchargé
+  link.href = canvas.toDataURL();                                                                           //convertit le contenu du canvas en image
+  link.click();                                                                                             //simuler un clic sur le lien pour déclencher le téléchargement
+  ajouterAGalerie(canvas.toDataURL());                                                                      //ajoute l’image générée à la galerie locale ou en mémoire
 }
 
 // === Partager le mème ===
 function PartagerMeme() {
-  if (!img.src || (texts.length === 0 && (!TexteEnCoursEdition || !TexteEnCoursEdition.text))) {   // Vérifie s’il y a une image chargée et au moins un texte à partager. Sinon :
-    alert("Ajoutez une image et du texte !");                                                      //afficher l'alert 
+  if (!img.src || (texts.length === 0 && (!TexteEnCoursEdition || !TexteEnCoursEdition.text))) {            // Vérifie s’il y a une image chargée et au moins un texte à partager. Sinon :
+    alert("Ajoutez une image et du texte !");                                                               //afficher l'alert 
     return;
   }
-  canvas.toBlob(blob => {                                                                         //Convertit le contenu du canvas en objet Blob
-    const file = new File([blob], "meme.png", { type: "image/png" });                               //Crée un objet File à partir du Blob, pour pouvoir le partager comme un vrai fichier.
+  canvas.toBlob(blob => {                                                                                  //convertit le contenu du canvas en objet Blob (objet qui représente des données binaires non structuréesobjet qui représente des données binaires non structurées)
+    const file = new File([blob], "meme.png", { type: "image/png" });                                      //crée un objet file à partir du Blob, pour pouvoir le partager comme un vrai fichier
     
-    if (navigator.canShare && navigator.canShare({ files: [file] })) {                                  //Vérifie si le navigateur supporte le partage de fichiers (via l’API Web Share).
-      navigator.share({                                                                             // Lance le partage natif avec titre et texte.
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {                                     //vérifier si le navigateur supporte le partage de fichiers (via l’API Web Share)
+      navigator.share({                                                                                    //lance le partage natif avec titre et texte
         files: [file],
         title: "Mème",
         text: "Voici un mème que j’ai créé !"
-      }).catch(console.error);                                                                      //Si erreur : elle est simplement loguée dans la console.
+      }).catch(console.error);                                                                             //si erreur : elle est simplement loguée dans la console
     } else {
-      alert("Partage non supporté sur ce navigateur.");                                             //Si l’API Web Share n’est pas disponible, on affiche un message.
+      alert("Partage non supporté sur ce navigateur.");                                                    //si l’API Web Share n’est pas disponible, on affiche un message
     }
   });
 }
@@ -225,5 +225,5 @@ function PartagerMeme() {
 function ajouterAGalerie(dataUrl) {
   const image = document.createElement("img");
   image.src = dataUrl;
-  galerie.appendChild(image);                                                                   //Affiche une miniature du mème généré dans une galerie d’images (HTML)/
+  galerie.appendChild(image);                                                                             //afficher une miniature du mème généré dans une galerie d’images (HTML)
 }
