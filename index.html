@@ -7,27 +7,31 @@
 </head>
 <body>
   <h1>Générateur de Mèmes</h1>
-
-
   <!-- Champ unique pour écrire le texte du mème -->
   <input type="file" id="TelechargerImage" accept="image/*"><br>
 
-<div class="container1">
-  
-  <input type="text" id="memeText" placeholder="Veuillez entrez le texte du mème"><br>
+  <div class="container1">
+    
+    <input type="text" id="memeText" placeholder="Veuillez entrez le texte du mème"><br>
+    
   <!-- Bouton pour figer un texte et commencer un nouveau -->
-  <button id="AjoutText">Ajouter un autre texte</button>
-</div>
+    <button id="AjoutText">Ajouter un autre texte</button>
+    
+  </div>
 
-<div class="text-controls">
-
+  <div class="text-controls">
+  <!-- Contrôles de style du texte -->  
     <label>Police 
+      
       <select id="FamilleDePolices">
+        
         <option value="Comic Sans MS">Comic Sans MS</option>
         <option value="Arial">Arial</option>
         <option value="Times New Roman">Times  New Roman</option>
         <option value="Impact">Impact</option>
+        
       </select>
+      
     </label>
 
     <label>Taille 
@@ -40,15 +44,11 @@
 
     <label>Gras <input type="checkbox" id="Gras"></label>
     <label>Italique <input type="checkbox" id="Italique"></label>
-   <!-- <label>Surligner <input type="checkbox" id="Surlignage"></label>
-
-    <label>Couleur surligneur :
-      <input type="color" id="CouleurDeSurlignage" value="#ffff00">
-    </label>
-      -->
-    <!-- Contrôles de style du texte -->
-  <button onclick="TelechargerMeme()">Télécharger</button>
-  <button onclick="PartagerMeme()">Partager</button>
+  
+  <!-- bouton pour télécharement et partage de mèmes créé -->
+    <button onclick="TelechargerMeme()">Télécharger</button>
+    <button onclick="PartagerMeme()">Partager</button>
+    
   </div>
 
   <!-- Canevas pour dessiner l’image et les textes -->
@@ -56,8 +56,10 @@
  
   <!-- Galerie des mèmes téléchargés -->
   <h2>Galerie</h2>
+  
   <div class="galerie" id="galerie"></div>
 
   <script src="script.js"></script>
+  
 </body>
 </html>
