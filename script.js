@@ -71,6 +71,10 @@ imageInput.addEventListener("change", EvenementChange => {
   if (!file) return;                                                                //  arrêter si aucun fichier
   const MonLecteur = new FileReader();
   MonLecteur.onload = () => {                                                       //déclenchée automatiquement à la fin du chargement ou de la lecture  
+// === Nettoyage des anciens textes ===
+    texts = [];                                                                     //vider tous les textes ajoutés
+    TexteEnCoursEdition = null;                                                     //réinitialiser le texte en cours d’édition
+    DemarrerUnNouveauTexte();                                                       //redémarrer un nouveau texte vide
     img.onload = DessinerMeme;
     img.src = MonLecteur.result;                                                    //result contient la Data URL après la lecture
   };
