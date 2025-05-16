@@ -1,4 +1,4 @@
-/* Style général */
+
 body {
   font-family: "Comic Sans MS", cursive, sans-serif;
   text-align: center;
@@ -6,12 +6,12 @@ body {
   color: #8b008b;
 }
 
-/* Titre stylisé avec ombre */
+
 h1 {
   text-shadow: 2px 2px 5px #ff69b4;
 }
 
-/* Style du canevas */
+
 canvas {
  border: 4px solid #ff69b4;
   margin-bottom: 10px;
@@ -21,7 +21,7 @@ canvas {
   
 }
 
-/* Style des inputs et boutons */
+
 input, button, select {
   margin: 10px;
   padding: 12px;
@@ -33,14 +33,14 @@ input, button, select {
   
 }
 
-/* Largeur ajustée pour les champs texte et listes */
+
 input[type="text"], select {
   width: 80%;
   display: flex;
   justify-content: flex-start;
 }
 
-/* Boutons */
+
 button {
   background-color: #ffb6c1;
   color: white;
@@ -51,7 +51,7 @@ button:hover {
   background-color: #ff69b4;
 }
 
-/* Galerie des images générées */
+
 .galerie {
   margin-top: 30px;
 }
@@ -65,11 +65,11 @@ button:hover {
   justify-content: flex-start;
 }
 
-/* Contrôles de texte regroupés */
+
 .text-controls {
   display: flex;
-  justify-content: flex-start; /* tous à gauche */
-  align-items: center; /* alignement vertical */
+  justify-content: flex-start; 
+  align-items: center; 
   gap: 10px; 
 }
 
@@ -79,28 +79,28 @@ label {
   align-items: center;
   margin-left : 20px;
   margin : 5px; 
-  width: 100%; /* ou ta largeur */
+  width: 100%;
 }
 
 
 .container1 {
   display: flex;
-  justify-content: flex-start; /* tous à gauche */
-  align-items: center; /* alignement vertical */
+  justify-content: flex-start; 
+  align-items: center; 
   gap: 10px; 
 }
 
 
-  #TelechargerImage {
+#TelechargerImage {
     display: none; /* On cache le bouton natif */
-  }
+}
 
-  .custom-file-upload {
+.custom-file-upload {
     cursor: pointer;
     display: inline-block;
-  }
+}
 
-  .custom-file-upload img {
+.custom-file-upload img {
     width: 150px; /* adapte selon la taille souhaitée */
     height: auto;
-  }
+}
