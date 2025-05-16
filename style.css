@@ -88,3 +88,17 @@ label {
   gap: 10px; 
 }
 
+#TelechargerImage {
+    display: none; /* On cache le bouton natif */
+}
+
+.custom-file-upload {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.custom-file-upload img {
+    width: 150px; /* adapte selon la taille souhaitée */
+    height: auto;
+}
+
